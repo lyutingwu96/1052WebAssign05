@@ -38,6 +38,7 @@ function setSkycons(day,condition){
     case "Cloudy":
       skycons.set(day, Skycons.CLOUDY);
       break;
+    case "Rain":
     case "Freezing Drizzle":
     case "Drizzle":
     case "Freezing Rain":
@@ -75,6 +76,7 @@ function setSkycons(day,condition){
     case "Blustery":
     case "Windy":
     case "Cold":
+    case "Breezy":
       skycons.set(day, Skycons.WIND);
       break;
     case "Dust":
@@ -165,8 +167,11 @@ $("#dropdown li").on("click", function(){
       $("#temp2").text(tempLow2+"-"+tempHigh2+" ℃");
       $("#temp3").text(tempLow3+"-"+tempHigh3+" ℃");
       var text1 = data.query.results.channel.item.forecast[1].text;
+      console.log("1 "+text1);
       var text2 = data.query.results.channel.item.forecast[2].text;
+      console.log("2 "+text2);
       var text3 = data.query.results.channel.item.forecast[3].text;
+      console.log("3 "+text3);
       setSkycons("day1",text1);
       setSkycons("day2",text2);
       setSkycons("day3",text3);
